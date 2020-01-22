@@ -4,21 +4,36 @@ import java.util.ArrayList;
 
 public class ModelRadio implements RadioInterface{
 	
-	private Frecuencia[] listadoFrecuenciaAm;
-	private Frecuencia[] listadoFrecuenciaFm;
-	private Frecuencia[] listadoFav;
-	private Frecuencia frec;
-	private RadioE rad;
+	//private ArrayList[] favFrecuenciaAm;
+	//private ArrayList[] favFrecuenciaFm;
+	//private ArrayList[] listadoFav;
+	//private ArrayList frec;
+	//private RadioE rad;
 	
+	RadioE rad = new RadioE();
 	
-	public ModelRadio() {
+	/*public ModelRadio(ArrayList[] favFrecuenciaAm, ArrayList[] favFrecuenciaFm, ArrayList frec, RadioE rad) {
+		super();
+		this.favFrecuenciaAm = favFrecuenciaAm;
+		this.favFrecuenciaFm = favFrecuenciaFm;
+		this.frec = frec;
+		this.rad = rad;
+	}*/
+
+	/*public ModelRadio() {
 		rad = new RadioE();
-		frec = new Frecuencia();
-		listadoFrecuenciaAm = new Frecuencia[30];
-		listadoFrecuenciaFm = new Frecuencia[30];
-		listadoFav = new Frecuencia[12];
+		//frec = new Frecuencia();
+		favFrecuenciaAm = new ArrayList(12);
+		favFrecuenciaFm = new Frecuencia[30];
+		//listadoFav = new Frecuencia[12];
 		
-	}
+	}*/
+
+	/*public ModelRadio() {
+		super();
+		
+		// TODO Auto-generated constructor stub
+	}*/
 
 	@Override
 	public String estacionActual() { //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCambiar
@@ -65,7 +80,30 @@ public class ModelRadio implements RadioInterface{
 
 	@Override
 	public void avanzar() {
-		int num = frec.getNum();
+		if(rad.getAmFM()==false) { //Caso en el que la frecuencia sea AM
+			if (rad.getFrecuenciaAm()!=1610) {
+				rad.setFrecuenciaAm(530);
+				float am = rad.getFrecuenciaAm();
+				System.out.println(rad.getFrecuenciaAm());
+				float salida = am+10;
+				rad.setFrecuenciaAm(salida);
+				System.out.println(rad.getFrecuenciaAm());
+			}
+			else
+				rad.setFrecuenciaAm(530);
+		}
+		else { //Caso en el que la frecuencia sea FM
+			if (rad.getFrecuenciaFm()!=107.9) {
+				double fm = rad.getFrecuenciaFm();
+				fm =  (fm + 0.2);
+				rad.setFrecuenciaFm(fm);
+			}
+			else
+				rad.setFrecuenciaFm(87.9);
+		System.out.println(rad.getFrecuenciaAm());
+		}
+		
+		/*int num = frec.getNum();
 		int seguir = num;
 		int prueba = num;
 		
@@ -76,14 +114,20 @@ public class ModelRadio implements RadioInterface{
 		else {
 			prueba += 1;
 			frec.setNum(prueba);
-		}
+		}*/
 	}
 
 	@Override
 	public void guardar(int boton) {
+		if (rad.getAmFM()) { //caso de que sea fm
+			ArrayList favoritosfm = new ArrayList(12);
+			double favFm = rad.getFrecuenciaFm();
+			
+		}
+		ArrayList favoritos = new ArrayList(12);
 		int top12 = boton;
-		int favEmisora = frec.getNum();
-		this.listadoFav[top12] = listadoFav[favEmisora];
+		float favEmisora = rad.getFrecuenciaAm();
+		//this.listadoFav[top12] = listadoFav[favEmisora];
 	}
 
 	@Override

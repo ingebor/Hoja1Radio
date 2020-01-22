@@ -18,6 +18,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class RadioG extends JFrame {
 
@@ -50,27 +52,19 @@ public class RadioG extends JFrame {
 	private int n1 = 0,n2 = 1,n3 = 2,n4 = 3,n5 = 4,n6 = 5,n7 = 6,n8 = 7,n9 = 8,n10 =9, n11 = 10, n12 = 11, n13 = 12, n14 = 13, n15 = 14, n16 = 15, n17 = 16, n18 = 17, n19 = 18, n20 = 19;
 	private String c1 = "Yellow" ,c2 = "paradise", c3 = "hello", c4 = "sound of silence", c5 = "need you now", c6 = "Stars", c7 = "touch", c8 = "heartless", c9 = "dinamic", c10 = "to you";
 	private String c11 = "Yellow" ,c12 = "paradise",c13 = "why?", c14 = "hello", c15 = "sound of silence", c16 = "need you now", c17 = "Stars", c18 = "touch", c19 = "heartless", c20 = "dinamic";
-	
+	private JLabel lblFrecActual;
 	
 	ModelRadio mod = new ModelRadio();
-	RadioE ip = new RadioE();
-	private JTextField textField;
+	RadioE radio = new RadioE();
+	private JTextField txtFrecuencia;
 
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RadioG frame = new RadioG();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		RadioG frame = new RadioG();
+		frame.setVisible(true);	
 	}
 
 	/**
@@ -115,6 +109,15 @@ public class RadioG extends JFrame {
 		oyente Fm = new oyente();
 		btnFm.addActionListener(Fm);
 		panel_1.add(btnFm);
+		
+		lblFrecActual = new JLabel("AM");
+		lblFrecActual.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFrecActual.setBounds(109, 13, 56, 16);
+		panel_1.add(lblFrecActual);
+		
+		JLabel lblFrecuenciaActual = new JLabel("Frecuencia Actual");
+		lblFrecuenciaActual.setBounds(179, 13, 107, 16);
+		panel_1.add(lblFrecuenciaActual);
 		oyente bon = new oyente();
 		oyente sup = new oyente();
 		oyente oy = new oyente();
@@ -130,10 +133,13 @@ public class RadioG extends JFrame {
 		oyente oyente3 = new oyente();
 		oyente oyente7 = new oyente();
 		
-		textField = new JTextField();
-		textField.setBounds(34, 23, 510, 90);
-		panelListFav.add(textField);
-		textField.setColumns(10);
+		txtFrecuencia = new JTextField();
+		txtFrecuencia.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtFrecuencia.setText("530");
+		txtFrecuencia.setHorizontalAlignment(SwingConstants.CENTER);
+		txtFrecuencia.setBounds(34, 23, 510, 90);
+		panelListFav.add(txtFrecuencia);
+		txtFrecuencia.setColumns(10);
 		
 		btnSave = new JButton("save");
 		btnSave.setBounds(612, 195, 84, 25);
@@ -251,22 +257,35 @@ public class RadioG extends JFrame {
 				JOptionPane.showMessageDialog(null, "este boton deberia de guardar la frecuencia en alguno de los espacios");
 			}
 			
-			
-
-
-			
 			if(e.getSource() == btnSubirF) {
-				JOptionPane.showMessageDialog(null, "Este boton deberia de subir la frecuencia");
+				mod.avanzar();
+				System.out.println(radio.getFrecuenciaAm());
+				float amf = radio.getFrecuenciaAm();
+				String ammf = Float.toString(amf);
+				txtFrecuencia.setText(ammf);
+				/*if(radio.getAmFM()==false) { //caso en el que la frecuencia sea am
+					String amFinal = Float.toString(radio.getFrecuenciaAm());
+					txtFrecuencia.setText(amFinal);
+				}*/
+				//JOptionPane.showMessageDialog(null, "Este boton deberia de subir la frecuencia");
 			}
 			if(e.getSource() == btnBajarF) {
 				JOptionPane.showMessageDialog(null, "Este boton deberia de bajar la frecuencia");
 			}
 			
 			if(e.getSource() == btnFm) {
-				JOptionPane.showMessageDialog(null, "Este boton deberia de cambiar de frecuencia AM a FM o quedarse en FM");
+				radio.setAmFm(true);
+				lblFrecActual.setText("FM");
+				double frecFm = radio.getFrecuenciaFm();
+				txtFrecuencia.setText(String.valueOf(frecFm));
+				//JOptionPane.showMessageDialog(null, "Este boton deberia de cambiar de frecuencia AM a FM o quedarse en FM");
 			}
 			if(e.getSource() == btnAm) {
-				JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
+				radio.setAmFm(false);
+				lblFrecActual.setText("AM");
+				float frecAm = radio.getFrecuenciaAm();
+				txtFrecuencia.setText(Float.toString(frecAm));
+				//JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
 			}
 			
 			if(e.getSource() == btnOp1) {
