@@ -262,9 +262,11 @@ public class RadioG extends JFrame {
 			}
 			
 			if(e.getSource() == btnSubirF) {
+				System.out.println(radio.getFrecuenciaAm()+" Numero desde la GUI, primero");
+
 				mod.avanzar();
-				System.out.println(radio.getFrecuenciaAm());
-				float amf = radio.getFrecuenciaAm();
+				System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI");
+				float amf = 55555;
 				String ammf = Float.toString(amf);
 				txtFrecuencia.setText(ammf);
 				/*if(radio.getAmFM()==false) { //caso en el que la frecuencia sea am
@@ -277,8 +279,10 @@ public class RadioG extends JFrame {
 				JOptionPane.showMessageDialog(null, "Este boton deberia de bajar la frecuencia");
 			}
 			
-			if(e.getSource() == btnFm) {
-				radio.setAmFm(true);
+			if(e.getSource() == btnFm) { //Cuando se presiona el boton para cambiar a FM
+				radio.setAmFm(true); //Cambiar el estado del atributo a true, osea, FM
+				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton FM");
+				radio.setFrecuenciaFm(89.6);
 				lblFrecActual.setText("FM");
 				double frecFm = radio.getFrecuenciaFm();
 				txtFrecuencia.setText(String.valueOf(frecFm));
@@ -286,14 +290,23 @@ public class RadioG extends JFrame {
 			}
 			if(e.getSource() == btnAm) {
 				radio.setAmFm(false);
+				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton AM");
 				lblFrecActual.setText("AM");
-				float frecAm = radio.getFrecuenciaAm();
-				txtFrecuencia.setText(Float.toString(frecAm));
+				if(radio.getFrecuenciaAm()==0) {
+					radio.setFrecuenciaAm(530);
+				}
+				else {
+					//radio.setAmFm(false);
+					//lblFrecActual.setText("AM");
+					float frecAm = radio.getFrecuenciaAm();
+					txtFrecuencia.setText(Float.toString(frecAm));
+				}
 				//JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
 			}
 			
 			if(e.getSource() == btnOp1) {
-				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
+				mod.seleccionarEmisora(1);
+				//JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
 			}
 			if(e.getSource() == btnOp2) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 2");
