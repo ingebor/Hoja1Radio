@@ -1,4 +1,5 @@
 import java.awt.List;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -120,20 +121,28 @@ public class ModelRadio implements RadioInterface{
 	@Override
 	public void guardar(int boton) {
 		if (rad.getAmFM()) { //caso de que sea fm
-			ArrayList favoritosfm = new ArrayList(12);
+			double[] favoritosfm = new double[11];
 			double favFm = rad.getFrecuenciaFm();
-			
+			int guardar = boton;
+			favoritosfm[guardar] = favFm;
 		}
-		ArrayList favoritos = new ArrayList(12);
-		int top12 = boton;
-		float favEmisora = rad.getFrecuenciaAm();
+		else if (!rad.getAmFM()) { //caso que sea am
+			double[] favoritosam = new double[11];
+			double favAm = rad.getFrecuenciaAm();
+			int guardaram = boton;
+			favoritosam[guardaram] = favAm;
+		}
+		//ArrayList favoritos = new ArrayList(12);
+		//int top12 = boton;
+		//float favEmisora = rad.getFrecuenciaAm();
 		//this.listadoFav[top12] = listadoFav[favEmisora];
 	}
 
 	@Override
 	public void seleccionarEmisora(int boton) {
-		
-		
+		if (rad.getAmFM()) { //caso que sea fm
+			
+		}
 	}
 
 }

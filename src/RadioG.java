@@ -72,7 +72,7 @@ public class RadioG extends JFrame {
 	 */
 	public RadioG() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 755, 510);
+		setBounds(100, 100, 686, 510);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -141,8 +141,8 @@ public class RadioG extends JFrame {
 		panelListFav.add(txtFrecuencia);
 		txtFrecuencia.setColumns(10);
 		
-		btnSave = new JButton("save");
-		btnSave.setBounds(612, 195, 84, 25);
+		btnSave = new JButton("Guardar");
+		btnSave.setBounds(543, 344, 84, 25);
 		oyente oyente4 = new oyente();
 		btnSave.addActionListener(oyente4);
 		contentPane.add(btnSave);
@@ -169,82 +169,86 @@ public class RadioG extends JFrame {
 		contentPane.add(lblRadio);
 		
 		btnOp1 = new JButton("1");
-		btnOp1.setBounds(0, 335, 68, 25);
+		btnOp1.setBounds(12, 344, 68, 25);
 		oyente op1 = new oyente();
 		btnOp1.addActionListener(op1);
 		contentPane.add(btnOp1);
 		
 		btnOp2 = new JButton("2");
-		btnOp2.setBounds(107, 335, 68, 25);
+		btnOp2.setBounds(92, 344, 68, 25);
 		oyente op2 = new oyente();
 		btnOp2.addActionListener(op2);
 		contentPane.add(btnOp2);
 		
 		btnOp3 = new JButton("3");
-		btnOp3.setBounds(232, 335, 68, 25);
+		btnOp3.setBounds(172, 344, 68, 25);
 		oyente op3 = new oyente();
 		btnOp3.addActionListener(op3);
 		contentPane.add(btnOp3);
 		
 		btnOp4 = new JButton("4");
-		btnOp4.setBounds(358, 335, 68, 25);
+		btnOp4.setBounds(252, 344, 68, 25);
 		oyente op4 = new oyente();
 		btnOp4.addActionListener(op4);
 		contentPane.add(btnOp4);
 		
 		btnOp5 = new JButton("5");
-		btnOp5.setBounds(483, 335, 68, 25);
+		btnOp5.setBounds(332, 344, 68, 25);
 		oyente op5 = new oyente();
 		btnOp5.addActionListener(op5);
 		contentPane.add(btnOp5);
 		
 		btnOp6 = new JButton("6");
-		btnOp6.setBounds(610, 335, 61, 25);
+		btnOp6.setBounds(412, 344, 61, 25);
 		oyente op6 = new oyente();
 		btnOp1.addActionListener(op6);
 		contentPane.add(btnOp6);
 		
 		btnOp7 = new JButton("7");
-		btnOp7.setBounds(0, 373, 68, 25);
+		btnOp7.setBounds(12, 396, 68, 25);
 		oyente op7 = new oyente();
 		btnOp7.addActionListener(op7);
 		contentPane.add(btnOp7);
 		
 		btnOp8 = new JButton("8");
-		btnOp8.setBounds(107, 373, 70, 25);
+		btnOp8.setBounds(92, 396, 70, 25);
 		oyente op8 = new oyente();
 		btnOp8.addActionListener(op8);
 		contentPane.add(btnOp8);
 		
 		btnOp9 = new JButton("9");
-		btnOp9.setBounds(232, 373, 68, 25);
+		btnOp9.setBounds(172, 396, 68, 25);
 		oyente op9 = new oyente();
 		btnOp9.addActionListener(op9);
 		contentPane.add(btnOp9);
 		
 	    btnOp10 = new JButton("10");
-		btnOp10.setBounds(358, 373, 68, 25);
+		btnOp10.setBounds(252, 396, 68, 25);
 		oyente op10 = new oyente();
 		btnOp10.addActionListener(op10);
 		contentPane.add(btnOp10);
 		
 		btnOp11 = new JButton("11");
-		btnOp11.setBounds(483, 373, 68, 25);
+		btnOp11.setBounds(332, 396, 68, 25);
 		oyente op11 = new oyente();
 		btnOp11.addActionListener(op11);
 		contentPane.add(btnOp11);
 		
 		btnOp12 = new JButton("12");
-		btnOp12.setBounds(610, 373, 61, 25);
+		btnOp12.setBounds(412, 396, 61, 25);
 		oyente op12 = new oyente();
 		btnOp12.addActionListener(op12);
 		contentPane.add(btnOp12);
 		
 		btnOnOff = new JButton("On/Off");
-		btnOnOff.setBounds(612, 13, 97, 25);
+		btnOnOff.setBounds(543, 13, 97, 25);
 		oyente onOff = new oyente();
 		btnOnOff.addActionListener(onOff);
 		contentPane.add(btnOnOff);
+		
+		JButton btnSeleccionar = new JButton("Seleccionar");
+		btnSeleccionar.setBounds(532, 396, 108, 25);
+		contentPane.add(btnSeleccionar);
 		
 		oyente oyente1 = new oyente();
 		oyente oy1 = new oyente();
