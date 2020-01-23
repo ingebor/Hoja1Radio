@@ -8,11 +8,11 @@ public class RadioE {
 	public RadioE() {
 		onOff = false;
 		amFm = true;
-		frecuenciaAm = 530;
+		frecuenciaAm = 580;
 		frecuenciaFm = 1100;
 	}
 	
-	public RadioE(boolean onOff, boolean amFm, float frecuenciaAm, float frecuenciaFm) {
+	public RadioE(boolean onOff, boolean amFm, double frecuenciaAm, double frecuenciaFm) {
 		this.onOff = onOff;
 		this.amFm = amFm;
 		this.frecuenciaAm = frecuenciaAm;

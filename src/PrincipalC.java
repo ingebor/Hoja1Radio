@@ -1,9 +1,5 @@
 
-/**
-* @author Andres Say Agosto
-* @date 19/09/2019
-* Modelar a una clinica
-**/
+
 import java.util.Scanner;
  
 public class PrincipalC{

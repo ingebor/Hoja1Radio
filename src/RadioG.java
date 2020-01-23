@@ -132,7 +132,6 @@ public class RadioG extends JFrame {
 		
 		txtFrecuencia = new JTextField();
 		txtFrecuencia.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtFrecuencia.setText("530");
 		txtFrecuencia.setHorizontalAlignment(SwingConstants.CENTER);
 		txtFrecuencia.setBounds(34, 23, 510, 90);
 		panelListFav.add(txtFrecuencia);
@@ -292,7 +291,7 @@ public class RadioG extends JFrame {
 				System.out.println(radio.isAmFm()+"Esto es luego de haber presionado el boton AM");
 				lblFrecActual.setText("AM");
 				if(radio.getFrecuenciaAm()==0) {
-					radio.setFrecuenciaAm(530);
+					radio.setFrecuenciaAm(560);
 				}
 				else {
 					//radio.setAmFm(false);

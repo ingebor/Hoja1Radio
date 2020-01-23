@@ -103,7 +103,7 @@ public class ModelRadio implements RadioInterface{
 				System.out.println(rad.getFrecuenciaAm()+"Numero despues de sumar");
 			}
 			else {
-				rad.setFrecuenciaAm(530);
+				rad.setFrecuenciaAm(580);
 				System.out.println("No entra a hacer la suma");
 			}
 		}
@@ -114,9 +114,10 @@ public class ModelRadio implements RadioInterface{
 				fm =  (fm + 0.2);
 				rad.setFrecuenciaFm(fm);
 			}
-			else
+			else {
 				rad.setFrecuenciaFm(87.9);
 		System.out.println(rad.getFrecuenciaAm());
+			}
 		}
 		
 		/*int num = frec.getNum();
@@ -166,7 +167,7 @@ public class ModelRadio implements RadioInterface{
 			}
 			else {
 				int frecseleccionada = (int) favoritosfm[boton];
-				rad.setFrecuenciaAm((float) favoritosfm[frecseleccionada]);
+				rad.setFrecuenciaAm((double) favoritosfm[frecseleccionada]);
 			}
 		}
 		else {
