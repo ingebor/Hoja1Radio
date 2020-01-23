@@ -266,7 +266,7 @@ public class RadioG extends JFrame {
 
 				mod.avanzar();
 				System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI");
-				float amf = 55555;
+				float amf = radio.getFrecuenciaAm();
 				String ammf = Float.toString(amf);
 				txtFrecuencia.setText(ammf);
 				/*if(radio.getAmFM()==false) { //caso en el que la frecuencia sea am
