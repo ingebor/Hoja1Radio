@@ -49,9 +49,6 @@ public class RadioG extends JFrame {
 	private JButton btnOp11;
 	private JButton btnOp12;
 	private JButton btnOnOff;
-	private int n1 = 0,n2 = 1,n3 = 2,n4 = 3,n5 = 4,n6 = 5,n7 = 6,n8 = 7,n9 = 8,n10 =9, n11 = 10, n12 = 11, n13 = 12, n14 = 13, n15 = 14, n16 = 15, n17 = 16, n18 = 17, n19 = 18, n20 = 19;
-	private String c1 = "Yellow" ,c2 = "paradise", c3 = "hello", c4 = "sound of silence", c5 = "need you now", c6 = "Stars", c7 = "touch", c8 = "heartless", c9 = "dinamic", c10 = "to you";
-	private String c11 = "Yellow" ,c12 = "paradise",c13 = "why?", c14 = "hello", c15 = "sound of silence", c16 = "need you now", c17 = "Stars", c18 = "touch", c19 = "heartless", c20 = "dinamic";
 	private JLabel lblFrecActual;
 	
 	ModelRadio mod = new ModelRadio();
@@ -266,8 +263,8 @@ public class RadioG extends JFrame {
 
 				mod.avanzar();
 				System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI");
-				float amf = radio.getFrecuenciaAm();
-				String ammf = Float.toString(amf);
+				double amf = radio.getFrecuenciaAm();
+				String ammf = Double.toString(amf);
 				txtFrecuencia.setText(ammf);
 				/*if(radio.getAmFM()==false) { //caso en el que la frecuencia sea am
 					String amFinal = Float.toString(radio.getFrecuenciaAm());
@@ -298,8 +295,8 @@ public class RadioG extends JFrame {
 				else {
 					//radio.setAmFm(false);
 					//lblFrecActual.setText("AM");
-					float frecAm = radio.getFrecuenciaAm();
-					txtFrecuencia.setText(Float.toString(frecAm));
+					double frecAm = radio.getFrecuenciaAm();
+					txtFrecuencia.setText(Double.toString(frecAm));
 				}
 				//JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
 			}

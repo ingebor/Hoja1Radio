@@ -90,9 +90,9 @@ public class ModelRadio implements RadioInterface{
 		if(rad.getAmFm()==false) { //Caso en el que la frecuencia sea AM
 			if (rad.getFrecuenciaAm()!=1610) {
 				//rad.setFrecuenciaAm(530);
-				float am = rad.getFrecuenciaAm();
+				double am = rad.getFrecuenciaAm();
 				System.out.println(rad.getFrecuenciaAm()+"Numero antes de sumar");
-				float salida = am+10;
+				double salida = am+10;
 				rad.setFrecuenciaAm(salida);
 				System.out.println(rad.getFrecuenciaAm()+"Numero despues de sumar");
 			}

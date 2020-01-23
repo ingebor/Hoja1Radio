@@ -2,8 +2,8 @@
 public class RadioE {
 	private boolean onOff;
 	private boolean amFm;
-	private float frecuenciaAm;
-	private float frecuenciaFm;
+	private double frecuenciaAm;
+	private double frecuenciaFm;
 
 	public RadioE() {
 		onOff = false;
@@ -22,7 +22,7 @@ public class RadioE {
 	/**
 	 * @return the onOff
 	 */
-	public boolean isOnOff() {
+	public boolean getOnOff() {
 		return onOff;
 	}
 
@@ -36,7 +36,7 @@ public class RadioE {
 	/**
 	 * @return the amFm
 	 */
-	public boolean isAmFm() {
+	public boolean getAmFm() {
 		return amFm;
 	}
 
@@ -50,28 +50,28 @@ public class RadioE {
 	/**
 	 * @return the frecuenciaAm
 	 */
-	public float getFrecuenciaAm() {
+	public double getFrecuenciaAm() {
 		return frecuenciaAm;
 	}
 
 	/**
 	 * @param frecuenciaAm the frecuenciaAm to set
 	 */
-	public void setFrecuenciaAm(float frecuenciaAm) {
+	public void setFrecuenciaAm(double frecuenciaAm) {
 		this.frecuenciaAm = frecuenciaAm;
 	}
 
 	/**
 	 * @return the frecuenciaFm
 	 */
-	public float getFrecuenciaFm() {
+	public double getFrecuenciaFm() {
 		return frecuenciaFm;
 	}
 
 	/**
 	 * @param frecuenciaFm the frecuenciaFm to set
 	 */
-	public void setFrecuenciaFm(float frecuenciaFm) {
+	public void setFrecuenciaFm(double frecuenciaFm) {
 		this.frecuenciaFm = frecuenciaFm;
 	}
 
