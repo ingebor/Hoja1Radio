@@ -18,6 +18,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class RadioG extends JFrame {
 
@@ -50,27 +52,19 @@ public class RadioG extends JFrame {
 	private int n1 = 0,n2 = 1,n3 = 2,n4 = 3,n5 = 4,n6 = 5,n7 = 6,n8 = 7,n9 = 8,n10 =9, n11 = 10, n12 = 11, n13 = 12, n14 = 13, n15 = 14, n16 = 15, n17 = 16, n18 = 17, n19 = 18, n20 = 19;
 	private String c1 = "Yellow" ,c2 = "paradise", c3 = "hello", c4 = "sound of silence", c5 = "need you now", c6 = "Stars", c7 = "touch", c8 = "heartless", c9 = "dinamic", c10 = "to you";
 	private String c11 = "Yellow" ,c12 = "paradise",c13 = "why?", c14 = "hello", c15 = "sound of silence", c16 = "need you now", c17 = "Stars", c18 = "touch", c19 = "heartless", c20 = "dinamic";
-	
+	private JLabel lblFrecActual;
 	
 	ModelRadio mod = new ModelRadio();
-	RadioE ip = new RadioE();
-	private JTextField textField;
+	RadioE radio = new RadioE();
+	private JTextField txtFrecuencia;
 
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RadioG frame = new RadioG();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		RadioG frame = new RadioG();
+		frame.setVisible(true);	
 	}
 
 	/**
@@ -78,7 +72,7 @@ public class RadioG extends JFrame {
 	 */
 	public RadioG() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 755, 510);
+		setBounds(100, 100, 686, 510);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -115,6 +109,15 @@ public class RadioG extends JFrame {
 		oyente Fm = new oyente();
 		btnFm.addActionListener(Fm);
 		panel_1.add(btnFm);
+		
+		lblFrecActual = new JLabel("AM");
+		lblFrecActual.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFrecActual.setBounds(109, 13, 56, 16);
+		panel_1.add(lblFrecActual);
+		
+		JLabel lblFrecuenciaActual = new JLabel("Frecuencia Actual");
+		lblFrecuenciaActual.setBounds(179, 13, 107, 16);
+		panel_1.add(lblFrecuenciaActual);
 		oyente bon = new oyente();
 		oyente sup = new oyente();
 		oyente oy = new oyente();
@@ -130,13 +133,16 @@ public class RadioG extends JFrame {
 		oyente oyente3 = new oyente();
 		oyente oyente7 = new oyente();
 		
-		textField = new JTextField();
-		textField.setBounds(34, 23, 510, 90);
-		panelListFav.add(textField);
-		textField.setColumns(10);
+		txtFrecuencia = new JTextField();
+		txtFrecuencia.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtFrecuencia.setText("530");
+		txtFrecuencia.setHorizontalAlignment(SwingConstants.CENTER);
+		txtFrecuencia.setBounds(34, 23, 510, 90);
+		panelListFav.add(txtFrecuencia);
+		txtFrecuencia.setColumns(10);
 		
-		btnSave = new JButton("save");
-		btnSave.setBounds(612, 195, 84, 25);
+		btnSave = new JButton("Guardar");
+		btnSave.setBounds(543, 344, 84, 25);
 		oyente oyente4 = new oyente();
 		btnSave.addActionListener(oyente4);
 		contentPane.add(btnSave);
@@ -163,82 +169,86 @@ public class RadioG extends JFrame {
 		contentPane.add(lblRadio);
 		
 		btnOp1 = new JButton("1");
-		btnOp1.setBounds(0, 335, 68, 25);
+		btnOp1.setBounds(12, 344, 68, 25);
 		oyente op1 = new oyente();
 		btnOp1.addActionListener(op1);
 		contentPane.add(btnOp1);
 		
 		btnOp2 = new JButton("2");
-		btnOp2.setBounds(107, 335, 68, 25);
+		btnOp2.setBounds(92, 344, 68, 25);
 		oyente op2 = new oyente();
 		btnOp2.addActionListener(op2);
 		contentPane.add(btnOp2);
 		
 		btnOp3 = new JButton("3");
-		btnOp3.setBounds(232, 335, 68, 25);
+		btnOp3.setBounds(172, 344, 68, 25);
 		oyente op3 = new oyente();
 		btnOp3.addActionListener(op3);
 		contentPane.add(btnOp3);
 		
 		btnOp4 = new JButton("4");
-		btnOp4.setBounds(358, 335, 68, 25);
+		btnOp4.setBounds(252, 344, 68, 25);
 		oyente op4 = new oyente();
 		btnOp4.addActionListener(op4);
 		contentPane.add(btnOp4);
 		
 		btnOp5 = new JButton("5");
-		btnOp5.setBounds(483, 335, 68, 25);
+		btnOp5.setBounds(332, 344, 68, 25);
 		oyente op5 = new oyente();
 		btnOp5.addActionListener(op5);
 		contentPane.add(btnOp5);
 		
 		btnOp6 = new JButton("6");
-		btnOp6.setBounds(610, 335, 61, 25);
+		btnOp6.setBounds(412, 344, 61, 25);
 		oyente op6 = new oyente();
 		btnOp1.addActionListener(op6);
 		contentPane.add(btnOp6);
 		
 		btnOp7 = new JButton("7");
-		btnOp7.setBounds(0, 373, 68, 25);
+		btnOp7.setBounds(12, 396, 68, 25);
 		oyente op7 = new oyente();
 		btnOp7.addActionListener(op7);
 		contentPane.add(btnOp7);
 		
 		btnOp8 = new JButton("8");
-		btnOp8.setBounds(107, 373, 70, 25);
+		btnOp8.setBounds(92, 396, 70, 25);
 		oyente op8 = new oyente();
 		btnOp8.addActionListener(op8);
 		contentPane.add(btnOp8);
 		
 		btnOp9 = new JButton("9");
-		btnOp9.setBounds(232, 373, 68, 25);
+		btnOp9.setBounds(172, 396, 68, 25);
 		oyente op9 = new oyente();
 		btnOp9.addActionListener(op9);
 		contentPane.add(btnOp9);
 		
 	    btnOp10 = new JButton("10");
-		btnOp10.setBounds(358, 373, 68, 25);
+		btnOp10.setBounds(252, 396, 68, 25);
 		oyente op10 = new oyente();
 		btnOp10.addActionListener(op10);
 		contentPane.add(btnOp10);
 		
 		btnOp11 = new JButton("11");
-		btnOp11.setBounds(483, 373, 68, 25);
+		btnOp11.setBounds(332, 396, 68, 25);
 		oyente op11 = new oyente();
 		btnOp11.addActionListener(op11);
 		contentPane.add(btnOp11);
 		
 		btnOp12 = new JButton("12");
-		btnOp12.setBounds(610, 373, 61, 25);
+		btnOp12.setBounds(412, 396, 61, 25);
 		oyente op12 = new oyente();
 		btnOp12.addActionListener(op12);
 		contentPane.add(btnOp12);
 		
 		btnOnOff = new JButton("On/Off");
-		btnOnOff.setBounds(612, 13, 97, 25);
+		btnOnOff.setBounds(543, 13, 97, 25);
 		oyente onOff = new oyente();
 		btnOnOff.addActionListener(onOff);
 		contentPane.add(btnOnOff);
+		
+		JButton btnSeleccionar = new JButton("Seleccionar");
+		btnSeleccionar.setBounds(532, 396, 108, 25);
+		contentPane.add(btnSeleccionar);
 		
 		oyente oyente1 = new oyente();
 		oyente oy1 = new oyente();
@@ -251,26 +261,52 @@ public class RadioG extends JFrame {
 				JOptionPane.showMessageDialog(null, "este boton deberia de guardar la frecuencia en alguno de los espacios");
 			}
 			
-			
-
-
-			
 			if(e.getSource() == btnSubirF) {
-				JOptionPane.showMessageDialog(null, "Este boton deberia de subir la frecuencia");
+				System.out.println(radio.getFrecuenciaAm()+" Numero desde la GUI, primero");
+
+				mod.avanzar();
+				System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI");
+				float amf = radio.getFrecuenciaAm();
+				String ammf = Float.toString(amf);
+				txtFrecuencia.setText(ammf);
+				/*if(radio.getAmFM()==false) { //caso en el que la frecuencia sea am
+					String amFinal = Float.toString(radio.getFrecuenciaAm());
+					txtFrecuencia.setText(amFinal);
+				}*/
+				//JOptionPane.showMessageDialog(null, "Este boton deberia de subir la frecuencia");
 			}
 			if(e.getSource() == btnBajarF) {
 				JOptionPane.showMessageDialog(null, "Este boton deberia de bajar la frecuencia");
 			}
 			
-			if(e.getSource() == btnFm) {
-				JOptionPane.showMessageDialog(null, "Este boton deberia de cambiar de frecuencia AM a FM o quedarse en FM");
+			if(e.getSource() == btnFm) { //Cuando se presiona el boton para cambiar a FM
+				radio.setAmFm(true); //Cambiar el estado del atributo a true, osea, FM
+				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton FM");
+				radio.setFrecuenciaFm(89.6);
+				lblFrecActual.setText("FM");
+				double frecFm = radio.getFrecuenciaFm();
+				txtFrecuencia.setText(String.valueOf(frecFm));
+				//JOptionPane.showMessageDialog(null, "Este boton deberia de cambiar de frecuencia AM a FM o quedarse en FM");
 			}
 			if(e.getSource() == btnAm) {
-				JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
+				radio.setAmFm(false);
+				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton AM");
+				lblFrecActual.setText("AM");
+				if(radio.getFrecuenciaAm()==0) {
+					radio.setFrecuenciaAm(530);
+				}
+				else {
+					//radio.setAmFm(false);
+					//lblFrecActual.setText("AM");
+					float frecAm = radio.getFrecuenciaAm();
+					txtFrecuencia.setText(Float.toString(frecAm));
+				}
+				//JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
 			}
 			
 			if(e.getSource() == btnOp1) {
-				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
+				mod.seleccionarEmisora(1);
+				//JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
 			}
 			if(e.getSource() == btnOp2) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 2");

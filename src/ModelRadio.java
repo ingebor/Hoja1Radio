@@ -1,29 +1,50 @@
 import java.awt.List;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 
 public class ModelRadio implements RadioInterface{
 	
-	private Frecuencia[] listadoFrecuenciaAm;
-	private Frecuencia[] listadoFrecuenciaFm;
-	private Frecuencia[] listadoFav;
-	private Frecuencia frec;
-	private RadioE rad;
+	//private ArrayList[] favFrecuenciaAm;
+	//private ArrayList[] favFrecuenciaFm;
+	//private ArrayList[] listadoFav;
+	//private ArrayList frec;
+	//private RadioE rad;
 	
+	RadioE rad = new RadioE();
+	double[] favoritosfm = new double[11];
+	double[] favoritosam = new double[11];
+
 	
-	public ModelRadio() {
+	/*public ModelRadio(ArrayList[] favFrecuenciaAm, ArrayList[] favFrecuenciaFm, ArrayList frec, RadioE rad) {
+		super();
+		this.favFrecuenciaAm = favFrecuenciaAm;
+		this.favFrecuenciaFm = favFrecuenciaFm;
+		this.frec = frec;
+		this.rad = rad;
+	}*/
+
+	/*public ModelRadio() {
 		rad = new RadioE();
-		frec = new Frecuencia();
-		listadoFrecuenciaAm = new Frecuencia[30];
-		listadoFrecuenciaFm = new Frecuencia[30];
-		listadoFav = new Frecuencia[12];
+		//frec = new Frecuencia();
+		favFrecuenciaAm = new ArrayList(12);
+		favFrecuenciaFm = new Frecuencia[30];
+		//listadoFav = new Frecuencia[12];
 		
-	}
+	}*/
+
+	/*public ModelRadio() {
+		super();
+		
+		// TODO Auto-generated constructor stub
+	}*/
 
 	@Override
 	public String estacionActual() { //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCambiar
 		String est = "";
-		boolean p = rad.isOnOff();
+		boolean p = rad.getOnOff();
 		if(p = false) {
 			est = "apagado";
 		}
@@ -37,7 +58,7 @@ public class ModelRadio implements RadioInterface{
 	@Override
 	public boolean estado() {
 		boolean est = false;
-		boolean p = rad.isOnOff();
+		boolean p = rad.getOnOff();
 		if(p = false) {
 			est = false;
 		}
@@ -50,7 +71,7 @@ public class ModelRadio implements RadioInterface{
 
 	@Override
 	public void onOff() {
-		boolean boton = rad.isOnOff();
+		boolean boton = rad.getOnOff();
 		boolean cambiar;
 		if(boton == true) {
 			cambiar = false;
@@ -65,7 +86,34 @@ public class ModelRadio implements RadioInterface{
 
 	@Override
 	public void avanzar() {
-		int num = frec.getNum();
+		System.out.println(rad.getAmFm()+"Esto es al entrar a avanzar");
+		if(rad.getAmFm()==false) { //Caso en el que la frecuencia sea AM
+			if (rad.getFrecuenciaAm()!=1610) {
+				//rad.setFrecuenciaAm(530);
+				float am = rad.getFrecuenciaAm();
+				System.out.println(rad.getFrecuenciaAm()+"Numero antes de sumar");
+				float salida = am+10;
+				rad.setFrecuenciaAm(salida);
+				System.out.println(rad.getFrecuenciaAm()+"Numero despues de sumar");
+			}
+			else {
+				rad.setFrecuenciaAm(530);
+				System.out.println("No entra a hacer la suma");
+			}
+		}
+		else if (rad.getAmFm()==true) { //Caso en el que la frecuencia sea FM
+			if (rad.getFrecuenciaFm()!=107.9) {
+				System.out.println("Esta entrando a la FM");
+				double fm = rad.getFrecuenciaFm();
+				fm =  (fm + 0.2);
+				rad.setFrecuenciaFm(fm);
+			}
+			else
+				rad.setFrecuenciaFm(87.9);
+		System.out.println(rad.getFrecuenciaAm());
+		}
+		
+		/*int num = frec.getNum();
 		int seguir = num;
 		int prueba = num;
 		
@@ -76,20 +124,48 @@ public class ModelRadio implements RadioInterface{
 		else {
 			prueba += 1;
 			frec.setNum(prueba);
-		}
+		}*/
 	}
 
 	@Override
 	public void guardar(int boton) {
-		int top12 = boton;
-		int favEmisora = frec.getNum();
-		this.listadoFav[top12] = listadoFav[favEmisora];
+		if (rad.getAmFm()) { //caso de que sea fm
+			//double[] favoritosfm = new double[11];
+			double favFm = rad.getFrecuenciaFm();
+			int guardar = boton;
+			favoritosfm[guardar] = favFm;
+		}
+		else if (!rad.getAmFm()) { //caso que sea am
+			//double[] favoritosam = new double[11];
+			double favAm = rad.getFrecuenciaAm();
+			int guardaram = boton;
+			favoritosam[guardaram] = favAm;
+		}
+		//ArrayList favoritos = new ArrayList(12);
+		//int top12 = boton;
+		//float favEmisora = rad.getFrecuenciaAm();
+		//this.listadoFav[top12] = listadoFav[favEmisora];
 	}
 
 	@Override
 	public void seleccionarEmisora(int boton) {
-		
-		
+		//JOptionPane.showMessageDialog(null, "Mensaje de prueba");
+		System.out.println(rad.getAmFm());
+		boolean hola = rad.getAmFm();
+		if (hola==true) { //caso que sea fm
+			JOptionPane.showMessageDialog(null, "Mensaje de prueba");
+
+			if(favoritosfm[boton] == 0) {
+				JOptionPane.showMessageDialog(null, "No hay una emisora almacenada en este boton");
+			}
+			else {
+				int frecseleccionada = (int) favoritosfm[boton];
+				rad.setFrecuenciaAm((float) favoritosfm[frecseleccionada]);
+			}
+		}
+		else {
+			
+		}
 	}
 
 }
