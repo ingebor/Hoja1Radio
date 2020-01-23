@@ -13,10 +13,19 @@ public class ModelRadio implements RadioInterface{
 	//private ArrayList frec;
 	//private RadioE rad;
 	
+<<<<<<< HEAD
 	private RadioE radio;
 	
+=======
+	private RadioE rad;
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 	double[] favoritosfm = new double[11];
 	double[] favoritosam = new double[11];
+	
+	
+	public ModelRadio() {
+		rad = new RadioE();
+	}
 
 	public ModelRadio() {
 		radio = new RadioE();
@@ -57,7 +66,11 @@ public class ModelRadio implements RadioInterface{
 	@Override
 	public String estacionActual() { //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCambiar
 		String est = "";
+<<<<<<< HEAD
 		boolean p = radio.getOnOff();
+=======
+		boolean p = rad.isOnOff();
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 		if(p = false) {
 			est = "apagado";
 		}
@@ -71,7 +84,11 @@ public class ModelRadio implements RadioInterface{
 	@Override
 	public boolean estado() {
 		boolean est = false;
+<<<<<<< HEAD
 		boolean p = radio.getOnOff();
+=======
+		boolean p = rad.isOnOff();
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 		if(p = false) {
 			est = false;
 		}
@@ -84,7 +101,11 @@ public class ModelRadio implements RadioInterface{
 
 	@Override
 	public void onOff() {
+<<<<<<< HEAD
 		boolean boton = radio.getOnOff();
+=======
+		boolean boton = rad.isOnOff();
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 		boolean cambiar;
 		if(boton == true) {
 			cambiar = false;
@@ -99,6 +120,7 @@ public class ModelRadio implements RadioInterface{
 
 	@Override
 	public void avanzar() {
+<<<<<<< HEAD
 		System.out.println(radio.getAmFm()+"Esto es al entrar a avanzar");
 		boolean hola = radio.getAmFm();
 		System.out.println(hola+" *********************************");
@@ -110,14 +132,31 @@ public class ModelRadio implements RadioInterface{
 				float salida = am+10;
 				radio.setFrecuenciaAm(salida);
 				System.out.println(radio.getFrecuenciaAm()+"Numero despues de sumar");
+=======
+		System.out.println(rad.isAmFm()+"Esto es al entrar a avanzar");
+		boolean holaa = rad.isAmFm();
+		if(holaa==false) { //Caso en el que la frecuencia sea AM
+			if (rad.getFrecuenciaAm()!=1610) {
+				//rad.setFrecuenciaAm(530);
+				double am = rad.getFrecuenciaAm();
+				System.out.println(rad.getFrecuenciaAm()+"Numero antes de sumar");
+				double salida = am+10;
+				rad.setFrecuenciaAm(salida);
+				System.out.println(rad.getFrecuenciaAm()+"Numero despues de sumar");
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 			}
 			else {
 				radio.setFrecuenciaAm(530);
 				System.out.println("No entra a hacer la suma");
 			}
 		}
+<<<<<<< HEAD
 		else if (radio.getAmFm()==true) { //Caso en el que la frecuencia sea FM
 			if (radio.getFrecuenciaFm()!=107.9) {
+=======
+		else if (rad.isAmFm()==true) { //Caso en el que la frecuencia sea FM
+			if (rad.getFrecuenciaFm()!=107.9) {
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 				System.out.println("Esta entrando a la FM");
 				System.out.println(radio.getFrecuenciaFm()+" frecuencia fm actual");
 				double fm = radio.getFrecuenciaFm();
@@ -146,13 +185,21 @@ public class ModelRadio implements RadioInterface{
 
 	@Override
 	public void guardar(int boton) {
+<<<<<<< HEAD
 		if (radio.getAmFm()) { //caso de que sea fm
+=======
+		if (rad.isAmFm()) { //caso de que sea fm
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 			//double[] favoritosfm = new double[11];
 			double favFm = radio.getFrecuenciaFm();
 			int guardar = boton;
 			favoritosfm[guardar] = favFm;
 		}
+<<<<<<< HEAD
 		else if (!radio.getAmFm()) { //caso que sea am
+=======
+		else if (!rad.isAmFm()) { //caso que sea am
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 			//double[] favoritosam = new double[11];
 			double favAm = radio.getFrecuenciaAm();
 			int guardaram = boton;
@@ -167,8 +214,13 @@ public class ModelRadio implements RadioInterface{
 	@Override
 	public void seleccionarEmisora(int boton) {
 		//JOptionPane.showMessageDialog(null, "Mensaje de prueba");
+<<<<<<< HEAD
 		System.out.println(radio.getAmFm());
 		boolean hola = radio.getAmFm();
+=======
+		System.out.println(rad.isAmFm());
+		boolean hola = rad.isAmFm();
+>>>>>>> 2da953539f67d05f19ef6cda0183cbe99904f920
 		if (hola==true) { //caso que sea fm
 			JOptionPane.showMessageDialog(null, "Mensaje de prueba");
 
