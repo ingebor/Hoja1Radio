@@ -277,8 +277,9 @@ public class RadioG extends JFrame {
 			}
 			
 			if(e.getSource() == btnFm) { //Cuando se presiona el boton para cambiar a FM
-				radio.setAmFm(true); //Cambiar el estado del atributo a true, osea, FM
-				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton FM");
+				boolean opcion = true;
+				radio.setAmFm(opcion); //Cambiar el estado del atributo a true, osea, FM
+				System.out.println(radio.isAmFm()+"Esto es luego de haber presionado el boton FM");
 				radio.setFrecuenciaFm(89.6);
 				lblFrecActual.setText("FM");
 				double frecFm = radio.getFrecuenciaFm();
@@ -286,8 +287,9 @@ public class RadioG extends JFrame {
 				//JOptionPane.showMessageDialog(null, "Este boton deberia de cambiar de frecuencia AM a FM o quedarse en FM");
 			}
 			if(e.getSource() == btnAm) {
-				radio.setAmFm(false);
-				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton AM");
+				boolean opcion2 = false;
+				radio.setAmFm(opcion2);
+				System.out.println(radio.isAmFm()+"Esto es luego de haber presionado el boton AM");
 				lblFrecActual.setText("AM");
 				if(radio.getFrecuenciaAm()==0) {
 					radio.setFrecuenciaAm(530);
