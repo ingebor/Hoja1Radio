@@ -49,13 +49,8 @@ public class GUI extends JFrame {
 	private JButton btnOp11;
 	private JButton btnOp12;
 	private JButton btnOnOff;
-	//private int n1 = 0,n2 = 1,n3 = 2,n4 = 3,n5 = 4,n6 = 5,n7 = 6,n8 = 7,n9 = 8,n10 =9, n11 = 10, n12 = 11, n13 = 12, n14 = 13, n15 = 14, n16 = 15, n17 = 16, n18 = 17, n19 = 18, n20 = 19;
-	//private String c1 = "Yellow" ,c2 = "paradise", c3 = "hello", c4 = "sound of silence", c5 = "need you now", c6 = "Stars", c7 = "touch", c8 = "heartless", c9 = "dinamic", c10 = "to you";
-	//private String c11 = "Yellow" ,c12 = "paradise",c13 = "why?", c14 = "hello", c15 = "sound of silence", c16 = "need you now", c17 = "Stars", c18 = "touch", c19 = "heartless", c20 = "dinamic";
 	private JLabel lblFrecActual;
 	
-	//ModelRadio mod = new ModelRadio();
-	//RadioE radio = new RadioE();
 	private JTextField txtFrecuencia;
 
 	private ModelRadio mod;
@@ -256,10 +251,6 @@ public class GUI extends JFrame {
 		btnOnOff.addActionListener(onOff);
 		contentPane.add(btnOnOff);
 		
-		JButton btnSeleccionar = new JButton("Seleccionar");
-		btnSeleccionar.setBounds(532, 396, 108, 25);
-		contentPane.add(btnSeleccionar);
-		
 		oyente oyente1 = new oyente();
 		oyente oy1 = new oyente();
 		
@@ -275,93 +266,127 @@ public class GUI extends JFrame {
 				mod.avanzar();
 				//System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI");
 				double amf = 0;
-				if (radio.getAmFm()==false) {
+				if (radio.getAmFm()==false) { //Si es am
 					amf = radio.getFrecuenciaAm();
 					System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI de AM");
 					String ammf = Double.toString(amf);
 					txtFrecuencia.setText(ammf);
 				}
-				else {
+				else { //si es fm
 					amf = radio.getFrecuenciaFm();
 					System.out.println(radio.getFrecuenciaFm()+"Numero desde la GUI de FM");
 					String ammf = Double.toString(amf);
 					txtFrecuencia.setText(ammf);
 				}
-
-				/*if(radio.getAmFM()==false) { //caso en el que la frecuencia sea am
-					String amFinal = Float.toString(radio.getFrecuenciaAm());
-					txtFrecuencia.setText(amFinal);
-				}*/
-				//JOptionPane.showMessageDialog(null, "Este boton deberia de subir la frecuencia");
 			}
+			
+			/**
+			 * ir a la emisora anterior
+			 */
 			if(e.getSource() == btnBajarF) {
 				JOptionPane.showMessageDialog(null, "Este boton deberia de bajar la frecuencia");
 			}
 			
+			/**
+			 * Accion para cuando se presione el boton fm
+			 */
 			if(e.getSource() == btnFm) { //Cuando se presiona el boton para cambiar a FM
-				//radio.setAmFm(true); //Cambiar el estado del atributo a true, osea, FM
 				radio.setAmFm(true);
 				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton FM");
-				radio.setFrecuenciaFm(89.6);
 				lblFrecActual.setText("FM");
 				double frecFm = radio.getFrecuenciaFm();
 				txtFrecuencia.setText(String.valueOf(frecFm));
-				//JOptionPane.showMessageDialog(null, "Este boton deberia de cambiar de frecuencia AM a FM o quedarse en FM");
 			}
+			
+			/**
+			 * Accion para cuando se presione el boton am
+			 */
 			if(e.getSource() == btnAm) {
 				radio.setAmFm(false);
 				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton AM");
 				lblFrecActual.setText("AM");
-				if(radio.getFrecuenciaAm()==0) {
-					radio.setFrecuenciaAm(530);
-				}
-				else {
-					//radio.setAmFm(false);
-					//lblFrecActual.setText("AM");
-					float frecAm = (float) radio.getFrecuenciaAm();
-					txtFrecuencia.setText(Float.toString(frecAm));
-				}
+				double frecAm = radio.getFrecuenciaAm();
+				txtFrecuencia.setText(String.valueOf(frecAm));
 				//JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
 			}
 			
+			/**
+			 * Si se presiona el boton 1
+			 */
 			if(e.getSource() == btnOp1) {
 				mod.seleccionarEmisora(1);
-				//JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
+				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
 			}
+			/**
+			 * Si se presiona el boton 2
+			 */
 			if(e.getSource() == btnOp2) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 2");
 			}
+			/**
+			 * Si se presiona el boton 3
+			 */
 			if(e.getSource() == btnOp3) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 3");
 			}
+			/**
+			 * Si se presiona el boton 4
+			 */
 			if(e.getSource() == btnOp4) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 4");
 			}
+			/**
+			 * Si se presiona el boton 5
+			 */
 			if(e.getSource() == btnOp5) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 5");
 			}
+			/**
+			 * Si se presiona el boton 6
+			 */
 			if(e.getSource() == btnOp6) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 6");
 			}
+			/**
+			 * Si se presiona el boton 7
+			 */
 			if(e.getSource() == btnOp7) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 7");
 			}
+			/**
+			 * Si se presiona el boton 8
+			 */
 			if(e.getSource() == btnOp8) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 8");
 			}
+			/**
+			 * Si se presiona el boton 9
+			 */
 			if(e.getSource() == btnOp9) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 9");
 			}
+			/**
+			 * Si se presiona el boton 10
+			 */
 			if(e.getSource() == btnOp10) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 10");
 			}
+			/**
+			 * Si se presiona el boton 11
+			 */
 			if(e.getSource() == btnOp11) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 11");
 			}
+			/**
+			 * Si se presiona el boton 12
+			 */
 			if(e.getSource() == btnOp12) {
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 12");
 			}
 			
+			/**
+			 * Encender o apagar radio
+			 */
 			if(e.getSource()==btnOnOff) {
 				mod.onOff();
 				if(btnOp1.isEnabled()) {

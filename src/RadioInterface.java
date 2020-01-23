@@ -1,3 +1,9 @@
+/**
+ * @author Ingebor Rubio 19003, Andres Say 19705
+ * @date 22/01/20
+ * Hoja de trabajo 1, interfaces
+ * Algoritmos y Estructuras de Datos
+ */
 
 public interface RadioInterface {
 	public String estacionActual();

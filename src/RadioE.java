@@ -1,3 +1,9 @@
+/**
+ * @author Ingebor Rubio 19003, Andres Say 19705
+ * @date 22/01/20
+ * Hoja de trabajo 1, interfaces
+ * Algoritmos y Estructuras de Datos
+ */
 
 public class RadioE {
 	private boolean onOff;
@@ -5,13 +11,23 @@ public class RadioE {
 	private double frecuenciaAm;
 	private double frecuenciaFm;
 
+	/**
+	 * Constructor
+	 */
 	public RadioE() {
 		onOff = false;
-		amFm = true;
+		amFm = false;
 		frecuenciaAm = 530;
-		frecuenciaFm = 1100;
+		frecuenciaFm = 87.9;
 	}
 	
+	/**
+	 * Constructor
+	 * @param onOff
+	 * @param amFm
+	 * @param frecuenciaAm
+	 * @param frecuenciaFm
+	 */
 	public RadioE(boolean onOff, boolean amFm, float frecuenciaAm, float frecuenciaFm) {
 		this.onOff = onOff;
 		this.amFm = amFm;

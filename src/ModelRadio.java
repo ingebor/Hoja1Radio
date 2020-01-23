@@ -1,3 +1,10 @@
+/**
+ * @author Ingebor Rubio 19003, Andres Say 19705
+ * @date 22/01/20
+ * Hoja de trabajo 1, interfaces
+ * Algoritmos y Estructuras de Datos
+ */
+
 import java.awt.List;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -7,28 +14,29 @@ import javax.swing.JOptionPane;
 
 public class ModelRadio implements RadioInterface{
 	
-	//private ArrayList[] favFrecuenciaAm;
-	//private ArrayList[] favFrecuenciaFm;
-	//private ArrayList[] listadoFav;
-	//private ArrayList frec;
-	//private RadioE rad;
-	
 	private RadioE radio;
 	
-	private RadioE rad;
 	double[] favoritosfm = new double[11];
 	double[] favoritosam = new double[11];
 	
 	
-
+	/**
+	 * Constructor
+	 */
 	public ModelRadio() {
 		radio = new RadioE();
 	}
 	
+	/**
+	 * @return the radio
+	 */
 	public RadioE getRadio() {
 		return radio;
 	}
-
+	
+	/**
+	 * @param radio
+	 */
 	public void setRadio(RadioE radio) {
 		this.radio = radio;
 	}
@@ -56,7 +64,9 @@ public class ModelRadio implements RadioInterface{
 		// TODO Auto-generated constructor stub
 	}*/
 
-
+	/**
+	 * 
+	 */
 	@Override
 	public String estacionActual() { //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCambiar
 		String est = "";
@@ -71,6 +81,9 @@ public class ModelRadio implements RadioInterface{
 		return est;
 	}
 
+	/**
+	 * Ver el estado de la radio, si esta encendida o apagada
+	 */
 	@Override
 	public boolean estado() {
 		boolean est = false;
@@ -85,6 +98,9 @@ public class ModelRadio implements RadioInterface{
 		return est;
 	}
 
+	/**
+	 * Encender o apagar la radio
+	 */
 	@Override
 	public void onOff() {
 		boolean boton = radio.getOnOff();
@@ -100,28 +116,27 @@ public class ModelRadio implements RadioInterface{
 		
 	}
 
+	/**
+	 * Avanzar en las emisoras, sumar a la emisora actual
+	 */
 	@Override
 	public void avanzar() {
 		System.out.println(radio.getAmFm()+"Esto es al entrar a avanzar");
 		boolean hola = radio.getAmFm();
-		System.out.println(hola+" *********************************");
 		if(hola==false) { //Caso en el que la frecuencia sea AM
 			if (radio.getFrecuenciaAm()!=1610) {
-				//rad.setFrecuenciaAm(530);
 				float am = (float) radio.getFrecuenciaAm();
 				System.out.println(radio.getFrecuenciaAm()+"Numero antes de sumar");
 				float salida = am+10;
 				radio.setFrecuenciaAm(salida);
 				System.out.println(radio.getFrecuenciaAm()+"Numero despues de sumar");
-		System.out.println(rad.getAmFm()+"Esto es al entrar a avanzar");
 			}
 			else {
 				radio.setFrecuenciaAm(530);
-				System.out.println("No entra a hacer la suma");
 			}
 		}
 		else if (radio.getAmFm()==true) { //Caso en el que la frecuencia sea FM
-			if (rad.getFrecuenciaFm()!=107.9) {
+			if (radio.getFrecuenciaFm()!=107.9) {
 				System.out.println("Esta entrando a la FM");
 				System.out.println(radio.getFrecuenciaFm()+" frecuencia fm actual");
 				double fm = radio.getFrecuenciaFm();
@@ -148,6 +163,10 @@ public class ModelRadio implements RadioInterface{
 		}*/
 	}
 
+	/**
+	 * guardar una radio
+	 * @param int boton, numero del boton presionado
+	 */
 	@Override
 	public void guardar(int boton) {
 		if (radio.getAmFm()) { //caso de que sea fm
@@ -168,6 +187,10 @@ public class ModelRadio implements RadioInterface{
 		//this.listadoFav[top12] = listadoFav[favEmisora];
 	}
 
+	/**
+	 * Seleccionar un boton y poner la emisora 
+	 * @param int boton, numero del boton seleccionado
+	 */
 	@Override
 	public void seleccionarEmisora(int boton) {
 		//JOptionPane.showMessageDialog(null, "Mensaje de prueba");
