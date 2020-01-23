@@ -22,7 +22,7 @@ public class RadioE {
 	/**
 	 * @return the onOff
 	 */
-	public boolean isOnOff() {
+	public boolean getOnOff() {
 		return onOff;
 	}
 
@@ -36,7 +36,7 @@ public class RadioE {
 	/**
 	 * @return the amFm
 	 */
-	public boolean isAmFm() {
+	public boolean getAmFm() {
 		return amFm;
 	}
 

@@ -41,10 +41,10 @@ public class PrincipalC{
 				//clase.set..()
 				}
 			if(opcion == 2) {
-				if(rad.isAmFm() == false) {
+				if(rad.getAmFm() == false) {
 					System.out.println(rad.getFrecuenciaAm());
 				}
-				else if(rad.isAmFm() == true) {
+				else if(rad.getAmFm() == true) {
 					System.out.println(rad.getFrecuenciaFm());
 				}
 				
