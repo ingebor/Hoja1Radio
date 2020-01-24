@@ -26,7 +26,6 @@ public class GUI extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnEliminar;
-	private JButton btnHabilitar;
 	private JButton btnAm;
 	private JButton btnPlay;
 	private JButton btnFm;
@@ -56,31 +55,31 @@ public class GUI extends JFrame {
 
 	private ModelRadio mod;
 	
-	private int save1;
-	private int save2;
-	private int save3;
-	private int save4;
-	private int save5;
-	private int save6;
-	private int save7;
-	private int save8;
-	private int save9;
-	private int save10;
-	private int save11;
-	private int save12;
+	private double save1;
+	private double save2;
+	private double save3;
+	private double save4;
+	private double save5;
+	private double save6;
+	private double save7;
+	private double save8;
+	private double save9;
+	private double save10;
+	private double save11;
+	private double save12;
 
-	private int select1;
-	private int select2;
-	private int select3;
-	private int select4;
-	private int select5;
-	private int select6;
-	private int select7;
-	private int select8;
-	private int select9;
-	private int select10;
-	private int select11;
-	private int select12;
+	private double select1;
+	private double select2;
+	private double select3;
+	private double select4;
+	private double select5;
+	private double select6;
+	private double select7;
+	private double select8;
+	private double select9;
+	private double select10;
+	private double select11;
+	private double select12;
 	/**
 	 * Launch the application.
 	 */
@@ -169,12 +168,7 @@ public class GUI extends JFrame {
 		txtFrecuencia.setBounds(34, 23, 510, 90);
 		panelListFav.add(txtFrecuencia);
 		txtFrecuencia.setColumns(10);
-		
-		btnHabilitar = new JButton("Habilitar");
-		btnHabilitar.setBounds(530, 331, 84, 25);
 		oyente oyente4 = new oyente();
-		btnHabilitar.addActionListener(oyente4);
-		contentPane.add(btnHabilitar);
 		
 		JLabel lblEstado = new JLabel("");
 		lblEstado.setBounds(487, 63, 209, 67);
@@ -222,68 +216,52 @@ public class GUI extends JFrame {
 		panel_2.setLayout(null);
 		
 		btnOp1 = new JButton("1");
-		btnOp1.setEnabled(false);
 		btnOp1.setBounds(12, 13, 68, 25);
 		panel_2.add(btnOp1);
 		
 		btnOp2 = new JButton("2");
-		btnOp2.setEnabled(false);
 		btnOp2.setBounds(94, 13, 68, 25);
 		panel_2.add(btnOp2);
 		
 		btnOp3 = new JButton("3");
-		btnOp3.setEnabled(false);
 		btnOp3.setBounds(174, 13, 68, 25);
 		panel_2.add(btnOp3);
 		
 		btnOp4 = new JButton("4");
-		btnOp4.setEnabled(false);
 		btnOp4.setBounds(265, 13, 68, 25);
 		panel_2.add(btnOp4);
 		
 		btnOp5 = new JButton("5");
-		btnOp5.setEnabled(false);
 		btnOp5.setBounds(355, 13, 68, 25);
 		panel_2.add(btnOp5);
 		
 		btnOp6 = new JButton("6");
-		btnOp6.setEnabled(false);
 		btnOp6.setBounds(447, 13, 67, 25);
 		panel_2.add(btnOp6);
 		
 		btnOp7 = new JButton("7");
-		btnOp7.setEnabled(false);
 		btnOp7.setBounds(12, 63, 68, 25);
 		panel_2.add(btnOp7);
 		
 		btnOp8 = new JButton("8");
-		btnOp8.setEnabled(false);
 		btnOp8.setBounds(94, 63, 66, 25);
 		panel_2.add(btnOp8);
 		
 		btnOp9 = new JButton("9");
-		btnOp9.setEnabled(false);
 		btnOp9.setBounds(174, 63, 68, 25);
 		panel_2.add(btnOp9);
 		
 	    btnOp10 = new JButton("10");
-	    btnOp10.setEnabled(false);
 	    btnOp10.setBounds(265, 63, 68, 25);
 	    panel_2.add(btnOp10);
 	    
 	    btnOp11 = new JButton("11");
-	    btnOp11.setEnabled(false);
 	    btnOp11.setBounds(355, 63, 68, 25);
 	    panel_2.add(btnOp11);
 	    
 	    btnOp12 = new JButton("12");
-	    btnOp12.setEnabled(false);
 	    btnOp12.setBounds(447, 63, 67, 25);
 	    panel_2.add(btnOp12);
-	    
-	    JLabel lblHabilitarBotones = new JLabel("Habilitar botones");
-	    lblHabilitarBotones.setBounds(529, 302, 111, 16);
-	    contentPane.add(lblHabilitarBotones);
 	    btnOp12.addActionListener(op12);
 	    btnOp11.addActionListener(op11);
 	    btnOp10.addActionListener(op10);
@@ -305,29 +283,6 @@ public class GUI extends JFrame {
 	
 	private class oyente implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			
-			if(e.getSource() == btnHabilitar) {
-				if(!btnOp1.isEnabled()) {
-					btnOp1.setEnabled(true);
-					btnOp2.setEnabled(true);
-					btnOp3.setEnabled(true);
-					btnOp4.setEnabled(true);
-					btnOp5.setEnabled(true);
-					btnOp6.setEnabled(true);
-					btnOp7.setEnabled(true);
-					btnOp8.setEnabled(true);
-					btnOp9.setEnabled(true);
-					btnOp10.setEnabled(true);
-					btnOp11.setEnabled(true);
-					btnOp12.setEnabled(true);
-					btnBajarF.setEnabled(true);
-					btnSubirF.setEnabled(true);
-					btnHabilitar.setEnabled(true);
-					btnAm.setEnabled(true);
-					btnFm.setEnabled(true);
-				}
-				//JOptionPane.showMessageDialog(null, "este boton deberia de guardar la frecuencia en alguno de los espacios");
-			}
 			
 			if(e.getSource() == btnSubirF) {
 				//int estacion = Integer.parseInt(txtFrecuencia.getText());
@@ -400,7 +355,13 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp1) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int respuesta = JOptionPane.showOptionDialog(null, "Mencione la opcion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				System.out.println(respuesta);
+				if(respuesta==0) {
+					save1 = Double.parseDouble(txtFrecuencia.getText());
+					System.out.println(save1);
+					System.out.println(save2);
+
+				}
+				//System.out.println(respuesta);
 				//mod.seleccionarEmisora(1);
 				//JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
 			}
@@ -495,7 +456,6 @@ public class GUI extends JFrame {
 					btnFm.setEnabled(false);
 					btnBajarF.setEnabled(false);
 					btnSubirF.setEnabled(false);
-					btnHabilitar.setEnabled(false);
 				}
 				
 				else {
@@ -513,7 +473,6 @@ public class GUI extends JFrame {
 					btnOp12.setEnabled(true);
 					btnBajarF.setEnabled(true);
 					btnSubirF.setEnabled(true);
-					btnHabilitar.setEnabled(true);
 					btnAm.setEnabled(true);
 					btnFm.setEnabled(true);
 					}	
