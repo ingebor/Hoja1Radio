@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
@@ -54,7 +55,6 @@ public class GUI extends JFrame {
 	private JTextField txtFrecuencia;
 
 	private ModelRadio mod;
-	private RadioE radio;
 
 	/**
 	 * Launch the application.
@@ -68,7 +68,6 @@ public class GUI extends JFrame {
 	public GUI() {
 		initialize();
 		mod = new ModelRadio();
-		radio = new RadioE();
 		
 	}
 
@@ -140,7 +139,7 @@ public class GUI extends JFrame {
 		
 		txtFrecuencia = new JTextField();
 		txtFrecuencia.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtFrecuencia.setText("530");
+		txtFrecuencia.setText("530.0");
 		txtFrecuencia.setHorizontalAlignment(SwingConstants.CENTER);
 		txtFrecuencia.setBounds(34, 23, 510, 90);
 		panelListFav.add(txtFrecuencia);
@@ -263,58 +262,75 @@ public class GUI extends JFrame {
 			}
 			
 			if(e.getSource() == btnSubirF) {
-				mod.avanzar();
-				//System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI");
-				double amf = 0;
-				if (radio.getAmFm()==false) { //Si es am
-					amf = radio.getFrecuenciaAm();
-					System.out.println(radio.getFrecuenciaAm()+"Numero desde la GUI de AM");
-					String ammf = Double.toString(amf);
-					txtFrecuencia.setText(ammf);
+				//int estacion = Integer.parseInt(txtFrecuencia.getText());
+				if (Double.parseDouble(txtFrecuencia.getText())>=530) {
+					Double estacion = Double.parseDouble(txtFrecuencia.getText());
+					if (estacion!=1610) {
+						estacion+=10;
+						txtFrecuencia.setText(String.valueOf(estacion));
+					}
+					else
+						txtFrecuencia.setText(String.valueOf(530.0));
 				}
-				else { //si es fm
-					amf = radio.getFrecuenciaFm();
-					System.out.println(radio.getFrecuenciaFm()+"Numero desde la GUI de FM");
-					String ammf = Double.toString(amf);
-					txtFrecuencia.setText(ammf);
+				else if(Double.parseDouble(txtFrecuencia.getText())>=87.9){//107.9
+					double estacionFm = Double.parseDouble(txtFrecuencia.getText());
+					if(estacionFm!=107.9) {
+						estacionFm += 0.2;
+						DecimalFormat df = new DecimalFormat("#.00");
+						String fm = df.format(estacionFm);
+						txtFrecuencia.setText(String.valueOf(fm));
+					}
+					else
+						txtFrecuencia.setText(String.valueOf(87.96));
 				}
 			}
+
 			
 			/**
 			 * ir a la emisora anterior
 			 */
 			if(e.getSource() == btnBajarF) {
-				JOptionPane.showMessageDialog(null, "Este boton deberia de bajar la frecuencia");
+				if (Double.parseDouble(txtFrecuencia.getText())>530) {
+					Double estacion = Double.parseDouble(txtFrecuencia.getText());
+					if (estacion<=1610) {
+						estacion-=10;
+						txtFrecuencia.setText(String.valueOf(estacion));
+					}
+				}
+				else if(Double.parseDouble(txtFrecuencia.getText())>87.9) {
+					double estacionFm = Double.parseDouble(txtFrecuencia.getText());
+					if(estacionFm<=107.9) {
+						estacionFm -= 0.2;
+						DecimalFormat df = new DecimalFormat("#.00");
+						String fm = df.format(estacionFm);
+						txtFrecuencia.setText(String.valueOf(fm));
+					}
+				}
 			}
 			
 			/**
 			 * Accion para cuando se presione el boton fm
 			 */
 			if(e.getSource() == btnFm) { //Cuando se presiona el boton para cambiar a FM
-				radio.setAmFm(true);
-				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton FM");
+				txtFrecuencia.setText("87.9");
+				System.out.println("Esto es luego de haber presionado el boton FM");
 				lblFrecActual.setText("FM");
-				double frecFm = radio.getFrecuenciaFm();
-				txtFrecuencia.setText(String.valueOf(frecFm));
 			}
 			
 			/**
 			 * Accion para cuando se presione el boton am
 			 */
 			if(e.getSource() == btnAm) {
-				radio.setAmFm(false);
-				System.out.println(radio.getAmFm()+"Esto es luego de haber presionado el boton AM");
+				txtFrecuencia.setText("530.0");
+				System.out.println("Esto es luego de haber presionado el boton AM");
 				lblFrecActual.setText("AM");
-				double frecAm = radio.getFrecuenciaAm();
-				txtFrecuencia.setText(String.valueOf(frecAm));
-				//JOptionPane.showMessageDialog(null, "este boton cambia la frecuencia a AM o la deja en AM");
 			}
 			
 			/**
 			 * Si se presiona el boton 1
 			 */
 			if(e.getSource() == btnOp1) {
-				mod.seleccionarEmisora(1);
+				//mod.seleccionarEmisora(1);
 				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
 			}
 			/**

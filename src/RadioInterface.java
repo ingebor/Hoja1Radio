@@ -12,4 +12,5 @@ public interface RadioInterface {
 	public void avanzar();
 	public void guardar(int boton);
 	public void seleccionarEmisora(int boton);
+	public void cambiarFrecuencia();
 }
