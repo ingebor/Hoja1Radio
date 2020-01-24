@@ -27,7 +27,7 @@ public class ModelRadio implements RadioInterface{
 	 */
 	public ModelRadio() {
 		onOff = false;
-		amFm = false;
+		amFm = true;
 		frecuenciaAm = 530;
 		frecuenciaFm = 87.9;
 	}
@@ -177,21 +177,16 @@ public class ModelRadio implements RadioInterface{
 	@Override
 	public void guardar(int boton) {
 		if (amFm) { //caso de que sea fm
-			//double[] favoritosfm = new double[11];
 			double favFm = frecuenciaFm;
 			int guardar = boton;
 			favoritosfm[guardar] = favFm;
 		}
 		else if (amFm) { //caso que sea am
-			//double[] favoritosam = new double[11];
 			double favAm = frecuenciaAm;
 			int guardaram = boton;
 			favoritosam[guardaram] = favAm;
 		}
-		//ArrayList favoritos = new ArrayList(12);
-		//int top12 = boton;
-		//float favEmisora = rad.getFrecuenciaAm();
-		//this.listadoFav[top12] = listadoFav[favEmisora];
+		
 	}
 
 	/**
@@ -217,6 +212,15 @@ public class ModelRadio implements RadioInterface{
 		else {
 			
 		}
+	}
+	public void cambiarFrecuencia() {
+		if(amFm==true) {
+			amFm=false;
+		}
+		else
+			amFm=true;
+		// TODO Auto-generated method stub
+		
 	}
 
 	public boolean getOnOff() {
@@ -251,10 +255,5 @@ public class ModelRadio implements RadioInterface{
 		this.frecuenciaFm = frecuenciaFm;
 	}
 
-	@Override
-	public void cambiarFrecuencia() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

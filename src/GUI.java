@@ -26,7 +26,7 @@ public class GUI extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnEliminar;
-	private JButton btnSave;
+	private JButton btnHabilitar;
 	private JButton btnAm;
 	private JButton btnPlay;
 	private JButton btnFm;
@@ -55,7 +55,32 @@ public class GUI extends JFrame {
 	private JTextField txtFrecuencia;
 
 	private ModelRadio mod;
+	
+	private int save1;
+	private int save2;
+	private int save3;
+	private int save4;
+	private int save5;
+	private int save6;
+	private int save7;
+	private int save8;
+	private int save9;
+	private int save10;
+	private int save11;
+	private int save12;
 
+	private int select1;
+	private int select2;
+	private int select3;
+	private int select4;
+	private int select5;
+	private int select6;
+	private int select7;
+	private int select8;
+	private int select9;
+	private int select10;
+	private int select11;
+	private int select12;
 	/**
 	 * Launch the application.
 	 */
@@ -76,7 +101,7 @@ public class GUI extends JFrame {
 	 */
 	public void initialize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 686, 510);
+		setBounds(100, 100, 686, 586);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -145,11 +170,11 @@ public class GUI extends JFrame {
 		panelListFav.add(txtFrecuencia);
 		txtFrecuencia.setColumns(10);
 		
-		btnSave = new JButton("Guardar");
-		btnSave.setBounds(543, 344, 84, 25);
+		btnHabilitar = new JButton("Habilitar");
+		btnHabilitar.setBounds(530, 331, 84, 25);
 		oyente oyente4 = new oyente();
-		btnSave.addActionListener(oyente4);
-		contentPane.add(btnSave);
+		btnHabilitar.addActionListener(oyente4);
+		contentPane.add(btnHabilitar);
 		
 		JLabel lblEstado = new JLabel("");
 		lblEstado.setBounds(487, 63, 209, 67);
@@ -171,78 +196,18 @@ public class GUI extends JFrame {
 		JLabel lblRadio = new JLabel("Radio");
 		lblRadio.setBounds(71, 8, 178, 16);
 		contentPane.add(lblRadio);
-		
-		btnOp1 = new JButton("1");
-		btnOp1.setBounds(12, 344, 68, 25);
 		oyente op1 = new oyente();
-		btnOp1.addActionListener(op1);
-		contentPane.add(btnOp1);
-		
-		btnOp2 = new JButton("2");
-		btnOp2.setBounds(92, 344, 68, 25);
 		oyente op2 = new oyente();
-		btnOp2.addActionListener(op2);
-		contentPane.add(btnOp2);
-		
-		btnOp3 = new JButton("3");
-		btnOp3.setBounds(172, 344, 68, 25);
 		oyente op3 = new oyente();
-		btnOp3.addActionListener(op3);
-		contentPane.add(btnOp3);
-		
-		btnOp4 = new JButton("4");
-		btnOp4.setBounds(252, 344, 68, 25);
 		oyente op4 = new oyente();
-		btnOp4.addActionListener(op4);
-		contentPane.add(btnOp4);
-		
-		btnOp5 = new JButton("5");
-		btnOp5.setBounds(332, 344, 68, 25);
 		oyente op5 = new oyente();
-		btnOp5.addActionListener(op5);
-		contentPane.add(btnOp5);
-		
-		btnOp6 = new JButton("6");
-		btnOp6.setBounds(412, 344, 61, 25);
 		oyente op6 = new oyente();
-		btnOp1.addActionListener(op6);
-		contentPane.add(btnOp6);
-		
-		btnOp7 = new JButton("7");
-		btnOp7.setBounds(12, 396, 68, 25);
 		oyente op7 = new oyente();
-		btnOp7.addActionListener(op7);
-		contentPane.add(btnOp7);
-		
-		btnOp8 = new JButton("8");
-		btnOp8.setBounds(92, 396, 70, 25);
 		oyente op8 = new oyente();
-		btnOp8.addActionListener(op8);
-		contentPane.add(btnOp8);
-		
-		btnOp9 = new JButton("9");
-		btnOp9.setBounds(172, 396, 68, 25);
 		oyente op9 = new oyente();
-		btnOp9.addActionListener(op9);
-		contentPane.add(btnOp9);
-		
-	    btnOp10 = new JButton("10");
-		btnOp10.setBounds(252, 396, 68, 25);
 		oyente op10 = new oyente();
-		btnOp10.addActionListener(op10);
-		contentPane.add(btnOp10);
-		
-		btnOp11 = new JButton("11");
-		btnOp11.setBounds(332, 396, 68, 25);
 		oyente op11 = new oyente();
-		btnOp11.addActionListener(op11);
-		contentPane.add(btnOp11);
-		
-		btnOp12 = new JButton("12");
-		btnOp12.setBounds(412, 396, 61, 25);
 		oyente op12 = new oyente();
-		btnOp12.addActionListener(op12);
-		contentPane.add(btnOp12);
 		
 		btnOnOff = new JButton("On/Off");
 		btnOnOff.setBounds(543, 13, 97, 25);
@@ -250,15 +215,118 @@ public class GUI extends JFrame {
 		btnOnOff.addActionListener(onOff);
 		contentPane.add(btnOnOff);
 		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(224, 255, 255));
+		panel_2.setBounds(71, 389, 537, 107);
+		contentPane.add(panel_2);
+		panel_2.setLayout(null);
+		
+		btnOp1 = new JButton("1");
+		btnOp1.setEnabled(false);
+		btnOp1.setBounds(12, 13, 68, 25);
+		panel_2.add(btnOp1);
+		
+		btnOp2 = new JButton("2");
+		btnOp2.setEnabled(false);
+		btnOp2.setBounds(94, 13, 68, 25);
+		panel_2.add(btnOp2);
+		
+		btnOp3 = new JButton("3");
+		btnOp3.setEnabled(false);
+		btnOp3.setBounds(174, 13, 68, 25);
+		panel_2.add(btnOp3);
+		
+		btnOp4 = new JButton("4");
+		btnOp4.setEnabled(false);
+		btnOp4.setBounds(265, 13, 68, 25);
+		panel_2.add(btnOp4);
+		
+		btnOp5 = new JButton("5");
+		btnOp5.setEnabled(false);
+		btnOp5.setBounds(355, 13, 68, 25);
+		panel_2.add(btnOp5);
+		
+		btnOp6 = new JButton("6");
+		btnOp6.setEnabled(false);
+		btnOp6.setBounds(447, 13, 67, 25);
+		panel_2.add(btnOp6);
+		
+		btnOp7 = new JButton("7");
+		btnOp7.setEnabled(false);
+		btnOp7.setBounds(12, 63, 68, 25);
+		panel_2.add(btnOp7);
+		
+		btnOp8 = new JButton("8");
+		btnOp8.setEnabled(false);
+		btnOp8.setBounds(94, 63, 66, 25);
+		panel_2.add(btnOp8);
+		
+		btnOp9 = new JButton("9");
+		btnOp9.setEnabled(false);
+		btnOp9.setBounds(174, 63, 68, 25);
+		panel_2.add(btnOp9);
+		
+	    btnOp10 = new JButton("10");
+	    btnOp10.setEnabled(false);
+	    btnOp10.setBounds(265, 63, 68, 25);
+	    panel_2.add(btnOp10);
+	    
+	    btnOp11 = new JButton("11");
+	    btnOp11.setEnabled(false);
+	    btnOp11.setBounds(355, 63, 68, 25);
+	    panel_2.add(btnOp11);
+	    
+	    btnOp12 = new JButton("12");
+	    btnOp12.setEnabled(false);
+	    btnOp12.setBounds(447, 63, 67, 25);
+	    panel_2.add(btnOp12);
+	    
+	    JLabel lblHabilitarBotones = new JLabel("Habilitar botones");
+	    lblHabilitarBotones.setBounds(529, 302, 111, 16);
+	    contentPane.add(lblHabilitarBotones);
+	    btnOp12.addActionListener(op12);
+	    btnOp11.addActionListener(op11);
+	    btnOp10.addActionListener(op10);
+		btnOp9.addActionListener(op9);
+		btnOp8.addActionListener(op8);
+		btnOp7.addActionListener(op7);
+		btnOp5.addActionListener(op5);
+		btnOp4.addActionListener(op4);
+		btnOp3.addActionListener(op3);
+		btnOp2.addActionListener(op2);
+		btnOp1.addActionListener(op1);
+		btnOp1.addActionListener(op6);
+		
 		oyente oyente1 = new oyente();
 		oyente oy1 = new oyente();
 		
 	}
+	
+	
 	private class oyente implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			
-			if(e.getSource() == btnSave) {
-				JOptionPane.showMessageDialog(null, "este boton deberia de guardar la frecuencia en alguno de los espacios");
+			if(e.getSource() == btnHabilitar) {
+				if(!btnOp1.isEnabled()) {
+					btnOp1.setEnabled(true);
+					btnOp2.setEnabled(true);
+					btnOp3.setEnabled(true);
+					btnOp4.setEnabled(true);
+					btnOp5.setEnabled(true);
+					btnOp6.setEnabled(true);
+					btnOp7.setEnabled(true);
+					btnOp8.setEnabled(true);
+					btnOp9.setEnabled(true);
+					btnOp10.setEnabled(true);
+					btnOp11.setEnabled(true);
+					btnOp12.setEnabled(true);
+					btnBajarF.setEnabled(true);
+					btnSubirF.setEnabled(true);
+					btnHabilitar.setEnabled(true);
+					btnAm.setEnabled(true);
+					btnFm.setEnabled(true);
+				}
+				//JOptionPane.showMessageDialog(null, "este boton deberia de guardar la frecuencia en alguno de los espacios");
 			}
 			
 			if(e.getSource() == btnSubirF) {
@@ -330,9 +398,14 @@ public class GUI extends JFrame {
 			 * Si se presiona el boton 1
 			 */
 			if(e.getSource() == btnOp1) {
+				String[] opciones = {"Guardar", "Seleccionar"};
+				int respuesta = JOptionPane.showOptionDialog(null, "Mencione la opcion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+				System.out.println(respuesta);
 				//mod.seleccionarEmisora(1);
-				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
+				//JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
 			}
+			
+			
 			/**
 			 * Si se presiona el boton 2
 			 */
@@ -422,7 +495,7 @@ public class GUI extends JFrame {
 					btnFm.setEnabled(false);
 					btnBajarF.setEnabled(false);
 					btnSubirF.setEnabled(false);
-					btnSave.setEnabled(false);
+					btnHabilitar.setEnabled(false);
 				}
 				
 				else {
@@ -440,7 +513,7 @@ public class GUI extends JFrame {
 					btnOp12.setEnabled(true);
 					btnBajarF.setEnabled(true);
 					btnSubirF.setEnabled(true);
-					btnSave.setEnabled(true);
+					btnHabilitar.setEnabled(true);
 					btnAm.setEnabled(true);
 					btnFm.setEnabled(true);
 					}	
