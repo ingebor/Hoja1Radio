@@ -68,18 +68,6 @@ public class GUI extends JFrame {
 	private double save11;
 	private double save12;
 
-	private double select1;
-	private double select2;
-	private double select3;
-	private double select4;
-	private double select5;
-	private double select6;
-	private double select7;
-	private double select8;
-	private double select9;
-	private double select10;
-	private double select11;
-	private double select12;
 	/**
 	 * Launch the application.
 	 */
@@ -268,12 +256,12 @@ public class GUI extends JFrame {
 		btnOp9.addActionListener(op9);
 		btnOp8.addActionListener(op8);
 		btnOp7.addActionListener(op7);
+		btnOp7.addActionListener(op6);
 		btnOp5.addActionListener(op5);
 		btnOp4.addActionListener(op4);
 		btnOp3.addActionListener(op3);
 		btnOp2.addActionListener(op2);
 		btnOp1.addActionListener(op1);
-		btnOp1.addActionListener(op6);
 		
 		oyente oyente1 = new oyente();
 		oyente oy1 = new oyente();
@@ -354,16 +342,15 @@ public class GUI extends JFrame {
 			 */
 			if(e.getSource() == btnOp1) {
 				String[] opciones = {"Guardar", "Seleccionar"};
-				int respuesta = JOptionPane.showOptionDialog(null, "Mencione la opcion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(respuesta==0) {
+				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+				if(resultado==0) {//Guardar
 					save1 = Double.parseDouble(txtFrecuencia.getText());
-					System.out.println(save1);
-					System.out.println(save2);
-
 				}
-				//System.out.println(respuesta);
-				//mod.seleccionarEmisora(1);
-				//JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 1");
+				else if(resultado==1) {//Seleccionar
+					if(save1!=0) {
+						txtFrecuencia.setText(String.valueOf(save1));
+					}
+				}
 			}
 			
 			
@@ -371,7 +358,16 @@ public class GUI extends JFrame {
 			 * Si se presiona el boton 2
 			 */
 			if(e.getSource() == btnOp2) {
-				JOptionPane.showMessageDialog(null, "Este boton pone la frecuencia guardada en el boton 2");
+				String[] opciones = {"Guardar", "Seleccionar"};
+				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+				if(resultado==0) { //Guardar
+					save2 = Double.parseDouble(txtFrecuencia.getText());
+				}
+				else if(resultado==1) {//Seleccionar
+					if(save2!=0) {
+					 txtFrecuencia.setText(String.valueOf(save2));
+					}
+				}
 			}
 			/**
 			 * Si se presiona el boton 3
