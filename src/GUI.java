@@ -1,3 +1,10 @@
+/**
+ * @author Ingebor Rubio 19003, Andres Say 19705
+ * @date 24/01/20
+ * Hoja de trabajo 1, interfaces
+ * Algoritmos y Estructuras de Datos
+ */
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -53,7 +60,7 @@ public class GUI extends JFrame {
 	
 	private JTextField txtFrecuencia;
 
-	private ModelRadio mod;
+	private ModelRadio mod; //Aca se conecta al controlador
 	
 	private double save1;
 	private double save2;
@@ -67,6 +74,7 @@ public class GUI extends JFrame {
 	private double save10;
 	private double save11;
 	private double save12;
+
 
 	/**
 	 * Launch the application.
@@ -88,7 +96,7 @@ public class GUI extends JFrame {
 	 */
 	public void initialize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 686, 586);
+		setBounds(100, 100, 686, 507);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -142,7 +150,7 @@ public class GUI extends JFrame {
 		JPanel panelListFav = new JPanel();
 		panelListFav.setBackground(new Color(224, 255, 255));
 		panelListFav.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Frecuencia de radio", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panelListFav.setBounds(71, 37, 581, 126);
+		panelListFav.setBounds(44, 37, 581, 126);
 		contentPane.add(panelListFav);
 		panelListFav.setLayout(null);
 		oyente oyente5 = new oyente();
@@ -199,7 +207,7 @@ public class GUI extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(224, 255, 255));
-		panel_2.setBounds(71, 389, 537, 107);
+		panel_2.setBounds(71, 328, 537, 107);
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		

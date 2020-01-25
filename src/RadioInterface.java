@@ -1,6 +1,6 @@
 /**
  * @author Ingebor Rubio 19003, Andres Say 19705
- * @date 22/01/20
+ * @date 24/01/20
  * Hoja de trabajo 1, interfaces
  * Algoritmos y Estructuras de Datos
  */

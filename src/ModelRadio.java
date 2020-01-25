@@ -46,31 +46,6 @@ public class ModelRadio implements RadioInterface{
 		this.frecuenciaFm = frecuenciaFm;
 	}
 	
-	
-	
-	/*public ModelRadio(ArrayList[] favFrecuenciaAm, ArrayList[] favFrecuenciaFm, ArrayList frec, RadioE rad) {
-		super();
-		this.favFrecuenciaAm = favFrecuenciaAm;
-		this.favFrecuenciaFm = favFrecuenciaFm;
-		this.frec = frec;
-		this.rad = rad;
-	}*/
-
-	/*public ModelRadio() {
-		rad = new RadioE();
-		//frec = new Frecuencia();
-		favFrecuenciaAm = new ArrayList(12);
-		favFrecuenciaFm = new Frecuencia[30];
-		//listadoFav = new Frecuencia[12];
-		
-	}*/
-
-	/*public ModelRadio() {
-		super();
-		
-		// TODO Auto-generated constructor stub
-	}*/
-
 	/**
 	 * 
 	 */
@@ -155,19 +130,7 @@ public class ModelRadio implements RadioInterface{
 				frecuenciaFm=87.9;
 		System.out.println(frecuenciaFm);
 		}
-		
-		/*int num = frec.getNum();
-		int seguir = num;
-		int prueba = num;
-		
-		if (seguir >= 30) {
-			prueba = 1;
-			frec.setNum(prueba);
-		}
-		else {
-			prueba += 1;
-			frec.setNum(prueba);
-		}*/
+
 	}
 
 	/**
