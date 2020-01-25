@@ -45,47 +45,33 @@ public class ModelRadio implements RadioInterface{
 		this.frecuenciaAm = frecuenciaAm;
 		this.frecuenciaFm = frecuenciaFm;
 	}
-	
-	
-	
-	/*public ModelRadio(ArrayList[] favFrecuenciaAm, ArrayList[] favFrecuenciaFm, ArrayList frec, RadioE rad) {
-		super();
-		this.favFrecuenciaAm = favFrecuenciaAm;
-		this.favFrecuenciaFm = favFrecuenciaFm;
-		this.frec = frec;
-		this.rad = rad;
-	}*/
-
-	/*public ModelRadio() {
-		rad = new RadioE();
-		//frec = new Frecuencia();
-		favFrecuenciaAm = new ArrayList(12);
-		favFrecuenciaFm = new Frecuencia[30];
-		//listadoFav = new Frecuencia[12];
-		
-	}*/
-
-	/*public ModelRadio() {
-		super();
-		
-		// TODO Auto-generated constructor stub
-	}*/
 
 	/**
-	 * 
+	 * Permite ver las caracteristicas actuales de la radio
 	 */
 	@Override
-	public String estacionActual() { //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCambiar
-		String est = "";
-		boolean p = onOff;
-		if(p = false) {
-			est = "apagado";
+	public String estacionActual() { 
+		String estado = "";
+		if(onOff == false) {
+			estado = "apagado";
 		}
 		else {
-			est = "encendido";
+			estado = "encendido";
+		}
+		String frec = "";
+		if(amFm == true) {
+			frec = "AM";
+		}
+		else {
+			frec="FM";
 		}
 		
-		return est;
+        if(amFm == true){
+            return "\nLa radio esta:"+ estado + "\nSe encuentra en la frecuencia:"+ frec+"\n Emisora: "+ frecuenciaAm;
+        }
+        else{
+            return "\\nLa radio esta:"+ estado + "\\nSe encuentra en la frecuencia:"+ frec+"\nEmisora: "+ frecuenciaFm;
+        }
 	}
 
 	/**
@@ -104,6 +90,8 @@ public class ModelRadio implements RadioInterface{
 		
 		return est;
 	}
+
+	 //devuelve true si la radio esta encendida y viceversa 
 
 	/**
 	 * Encender o apagar la radio
@@ -156,18 +144,7 @@ public class ModelRadio implements RadioInterface{
 		System.out.println(frecuenciaFm);
 		}
 		
-		/*int num = frec.getNum();
-		int seguir = num;
-		int prueba = num;
-		
-		if (seguir >= 30) {
-			prueba = 1;
-			frec.setNum(prueba);
-		}
-		else {
-			prueba += 1;
-			frec.setNum(prueba);
-		}*/
+
 	}
 
 	/**
