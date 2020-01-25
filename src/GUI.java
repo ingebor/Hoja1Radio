@@ -74,6 +74,18 @@ public class GUI extends JFrame {
 	private double save10;
 	private double save11;
 	private double save12;
+	private double save1Fm;
+	private double save2Fm;
+	private double save3Fm;
+	private double save4Fm;
+	private double save5Fm;
+	private double save6Fm;
+	private double save7Fm;
+	private double save8Fm;
+	private double save9Fm;
+	private double save10Fm;
+	private double save11Fm;
+	private double save12Fm;
 
 
 	/**
@@ -351,12 +363,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp1) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save1 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save1!=0) {
-						txtFrecuencia.setText(String.valueOf(save1));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save1 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save1!=0) {
+							txtFrecuencia.setText(String.valueOf(save1));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save1Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save1Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save1Fm));
+						}
 					}
 				}
 			}
@@ -368,12 +392,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp2) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) { //Guardar
-					save2 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save2!=0) {
-					 txtFrecuencia.setText(String.valueOf(save2));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save2 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save2!=0) {
+							txtFrecuencia.setText(String.valueOf(save2));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save2Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save2Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save2Fm));
+						}
 					}
 				}
 			}
@@ -383,12 +419,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp3) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save3 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save3!=0) {
-						txtFrecuencia.setText(String.valueOf(save3));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save3 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save3!=0) {
+							txtFrecuencia.setText(String.valueOf(save3));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save3Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save3Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save3Fm));
+						}
 					}
 				}
 			}
@@ -398,12 +446,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp4) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save4 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save4!=0) {
-						txtFrecuencia.setText(String.valueOf(save4));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save4 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save4!=0) {
+							txtFrecuencia.setText(String.valueOf(save4));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save4Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save4Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save4Fm));
+						}
 					}
 				}
 			}
@@ -413,12 +473,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp5) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save5 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save5!=0) {
-						txtFrecuencia.setText(String.valueOf(save5));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save5 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save5!=0) {
+							txtFrecuencia.setText(String.valueOf(save5));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save5Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save5Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save5Fm));
+						}
 					}
 				}
 			}
@@ -428,12 +500,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp6) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save6 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save6!=0) {
-						txtFrecuencia.setText(String.valueOf(save6));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save6 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save6!=0) {
+							txtFrecuencia.setText(String.valueOf(save6));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save6Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save6Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save6Fm));
+						}
 					}
 				}
 			}
@@ -443,12 +527,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp7) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save7 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save7!=0) {
-						txtFrecuencia.setText(String.valueOf(save7));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save7 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save7!=0) {
+							txtFrecuencia.setText(String.valueOf(save7));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save7Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save7Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save7Fm));
+						}
 					}
 				}
 			}
@@ -458,12 +554,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp8) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save8 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save8!=0) {
-						txtFrecuencia.setText(String.valueOf(save8));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save8 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save8!=0) {
+							txtFrecuencia.setText(String.valueOf(save8));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save8Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save8Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save8Fm));
+						}
 					}
 				}
 			}
@@ -473,12 +581,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp9) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save9 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save9!=0) {
-						txtFrecuencia.setText(String.valueOf(save9));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save9 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save9!=0) {
+							txtFrecuencia.setText(String.valueOf(save9));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save9Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save9Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save9Fm));
+						}
 					}
 				}
 			}
@@ -488,12 +608,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp10) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save10 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save10!=0) {
-						txtFrecuencia.setText(String.valueOf(save10));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save10 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save10!=0) {
+							txtFrecuencia.setText(String.valueOf(save10));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save10Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save10Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save10Fm));
+						}
 					}
 				}
 			}
@@ -503,12 +635,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp11) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save11 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save11!=0) {
-						txtFrecuencia.setText(String.valueOf(save11));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save11 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save11!=0) {
+							txtFrecuencia.setText(String.valueOf(save11));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save11Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save11Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save11Fm));
+						}
 					}
 				}
 			}
@@ -518,12 +662,24 @@ public class GUI extends JFrame {
 			if(e.getSource() == btnOp12) {
 				String[] opciones = {"Guardar", "Seleccionar"};
 				int resultado = JOptionPane.showOptionDialog(null, "Escoger accion que desea realizar", "Opcion a elegir", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				if(resultado==0) {//Guardar
-					save12 = Double.parseDouble(txtFrecuencia.getText());
-				}
-				else if(resultado==1) {//Seleccionar
-					if(save12!=0) {
-						txtFrecuencia.setText(String.valueOf(save12));
+				if(lblFrecActual.getText().equals("AM")) {
+					if(resultado==0) {//Guardar
+						save12 = Double.parseDouble(txtFrecuencia.getText());
+						}
+					else if(resultado==1) {//Seleccionar
+						if(save12!=0) {
+							txtFrecuencia.setText(String.valueOf(save12));
+							}
+						}
+					}
+				else if(lblFrecActual.getText().equals("FM")) {
+					if(resultado==0) {//Guardar
+						save12Fm = Double.parseDouble(txtFrecuencia.getText());
+					}
+					else if(resultado==1) {//Seleccionar
+						if(save12Fm!=0) {
+							txtFrecuencia.setText(String.valueOf(save12Fm));
+						}
 					}
 				}
 			}
@@ -580,4 +736,5 @@ public class GUI extends JFrame {
 			
 		}
 	}
+	
 	

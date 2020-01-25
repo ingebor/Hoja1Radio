@@ -47,20 +47,31 @@ public class ModelRadio implements RadioInterface{
 	}
 	
 	/**
-	 * 
+	 * Permite ver las caracteristicas actuales de la radio
 	 */
 	@Override
-	public String estacionActual() { //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCambiar
-		String est = "";
-		boolean p = onOff;
-		if(p = false) {
-			est = "apagado";
+	public String estacionActual() { 
+		String estado = "";
+		if(onOff == false) {
+			estado = "apagado";
 		}
 		else {
-			est = "encendido";
+			estado = "encendido";
+		}
+		String frec = "";
+		if(amFm == true) {
+			frec = "AM";
+		}
+		else {
+			frec="FM";
 		}
 		
-		return est;
+        if(amFm == true){
+            return "\nLa radio esta:"+ estado + "\nSe encuentra en la frecuencia:"+ frec+"\n Emisora: "+ frecuenciaAm;
+        }
+        else{
+            return "\\nLa radio esta:"+ estado + "\\nSe encuentra en la frecuencia:"+ frec+"\nEmisora: "+ frecuenciaFm;
+        }
 	}
 
 	/**
@@ -79,6 +90,8 @@ public class ModelRadio implements RadioInterface{
 		
 		return est;
 	}
+
+	 //devuelve true si la radio esta encendida y viceversa 
 
 	/**
 	 * Encender o apagar la radio
